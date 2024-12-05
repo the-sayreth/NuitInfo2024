@@ -1,0 +1,311 @@
+/* Style général */
+html {
+    --background-black: #fcf2f2;
+
+    --blanc: #000000;
+
+    --theme-secondair: #8a6b1c;
+
+    --text-blanc: #3b3b3b;
+
+    --gris-clair: #3b3b3b;
+
+    --gris-sombre: #adadad;
+
+    --encadrer: #ffe3e3;
+
+    --arriere-plan-1: #ffdee3;
+
+    --arriere-plan-2: #ffb0ba;
+    --bouton-activer: #290006;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+@media (prefers-color-scheme: light) {}
+
+body {
+    background-color: var(--background-black);
+    color: var(--blanc);
+    font-family: Afacad Flux, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    width: 100%;
+    margin: 0;
+    /* Supprime toutes les marges par défaut */
+    padding: 0;
+    /* Supprime tous les espacements par défaut */
+    height: 100%;
+    /* S'assure que la hauteur couvre l'écran */
+
+    ;
+    /* Empêche les débordements inattendus */
+}
+html.mod-touch * {
+    background-attachment: scroll !important;
+  }
+/* Style du bandeau */
+.header {
+    position: fixed;
+    /* Rendre le header fixe */
+    top: 0;
+    /* Fixé au sommet de la page */
+    left: 0;
+    width: 100%;
+    /* S'étend sur toute la largeur */
+    background-color: var(--encadrer);
+    padding: 20px;
+    /* Espacement interne */
+    /* Assure que le header est au-dessus des autres éléments */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Légère ombre pour le style */
+}
+
+.section_total_header {
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background-color: var(--encadrer);
+    padding: 20px;
+    display: flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    /* Légère ombre pour le style */
+}
+
+
+.user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.user-actions a,
+.user-actions span {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Section principale */
+
+.header-button {
+
+    color: var(--text--off-blanc);
+    background-color: var(--arriere-plan-2);
+    /* Couleur de fond du bouton */
+    /* Couleur du texte */
+    border: none;
+    /* Supprimer les bordures */
+    padding: 10px 15px;
+
+    /* Espacement interne du bouton */
+    border-radius: 30px;
+    /* Coins arrondis */
+    font-size: 14px;
+    /* Taille du texte */
+    cursor: pointer;
+    /* Curseur en forme de main */
+    transition: background-color 0.3s ease;
+    /* Transition pour effet hover */
+    box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+}
+
+.header-button:hover {
+
+    /* Couleur de fond au survol */
+    background-color: var(--bouton-activer);
+    /* Couleur de fond au survol */
+}
+
+.header-button:active {
+    border-color: #d4d3d1;
+}
+
+.header-button:focus {
+    border-color: #a1a09c;
+}
+
+.header .left {
+    color: var(--text--off-blanc);
+    margin-right: auto;
+    /* Pousse les autres éléments vers la droite */
+}
+
+/* Bouton à droite (Connexion) */
+.header .right {
+    color: var(--text--off-blanc);
+    margin-left: auto;
+    /* Pousse les autres éléments vers la gauche */
+}
+
+/* Conteneur circulaire */
+.circle-container {
+    background-image: url('chien.png');
+    background-size: cover;
+    /* Ajuste l'image pour couvrir tout le rectangle */
+    background-position: center;
+    /* Centrer l'image */
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    /*  Cache tout ce qui dépasse du cercle */
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+
+}
+
+/* Rectangle animé */
+.rectangle {
+
+    position: absolute;
+    width: 60px;
+    height: 120px;
+    background-color: #3498db;
+    transform-origin: center bottom;
+    transition: all 0.8s ease;
+    /* Transition pour lisser l'animation */
+}
+
+/* Rectangle 1 (gauche) */
+.rectangle.left {
+    top: 300px;
+    /* En dehors du cercle */
+    left: 100px;
+    transform: translateX(-100px) rotate(80deg);
+}
+
+/* Rectangle 2 (droite) */
+.rectangle.right {
+    top: 300px;
+    /* En dehors du cercle */
+    right: 100px;
+    transform: translateX(100px) rotate(-80deg);
+}
+
+/* Animation de montée et rotation */
+.circle-container.active .rectangle.left {
+    top: -0px;
+    /* Monte de 100px */
+    /* Rotation dans le sens anti-horaire */
+}
+
+.circle-container.active .rectangle.right {
+    top: -0px;
+    /* Monte de 100px */
+    /* Rotation dans le sens horaire */
+}
+
+.section_total {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+main {
+    padding: 2rem;
+}
+
+.placeholder {
+    margin-bottom: 2rem;
+}
+
+.score-section {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ddd;
+}
+
+
+#oeil1 {
+
+    transition: transform 0.1s linear;
+
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    /* Couleur noire */
+    border-radius: 50%;
+    /* Rend l'élément parfaitement circulaire */
+    top: 79px;
+    /* Centre verticalement */
+    left: -15px;
+    /* Centre horizontalement */
+    position: relative;
+}
+
+#oeil2 {
+    width: 45px;
+    height: 45px;
+    transition: transform 0.1s linear;
+    position: relative;
+    background-color: black;
+    /* Couleur noire */
+    border-radius: 50%;
+    /* Rend l'élément parfaitement circulaire */
+    top: 79px;
+    /* Centre verticalement */
+    left: 15px;
+    /* Centre horizontalement */
+
+}
+
+.rectangle1 {
+
+    width: 200px;
+    height: 200px;
+    background-image: url('chien.png');
+    background-size: cover;
+    /* Ajuste l'image pour couvrir tout le rectangle */
+    background-position: center;
+    /* Centrer l'image */
+    margin: 1rem auto;
+
+
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,
+button {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Page de connexion */
+.login-container {
+    max-width: 400px;
+    margin: 1rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
