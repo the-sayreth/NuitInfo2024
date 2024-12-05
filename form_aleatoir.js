@@ -23,3 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('Nom').placeholder = randomText[1];
     document.getElementById('Email').placeholder = randomText[2];
 });
+
+
+//CEIC EST CBU TEST
