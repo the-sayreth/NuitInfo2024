@@ -19,7 +19,7 @@ function getRandomText() {
 // Appliquer le même texte aléatoire aux placeholders
 document.addEventListener('DOMContentLoaded', () => {
     const randomText = getRandomText(); // Générer un texte aléatoire unique
-    document.getElementById('Prenom').placeholder = randomText[0];
-    document.getElementById('Nom').placeholder = randomText[1];
-    document.getElementById('Email').placeholder = randomText[2];
+    document.getElementById('prenom').placeholder = randomText[0];
+    document.getElementById('nom').placeholder = randomText[1];
+    document.getElementById('email').placeholder = randomText[2];
 });
